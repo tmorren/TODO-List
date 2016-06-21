@@ -1,0 +1,7 @@
+.completed{
+	text-decoration: line-through;
+}
+
+.high_priority{
+	background: red;
+}

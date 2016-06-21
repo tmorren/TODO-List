@@ -3,12 +3,25 @@
 <head>
 	<title>TODO List</title>
 	<meta charset="UTF-8">
-	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body data-ng-app="todoApp">
 	<div data-ng-controller="TodoController">
 	
-		<h1>{{ appTitle }}</h1>
+		<h1>My TODO List</h1>
+		<ul>
+			<li ng-repeat="todo in todos track by $index">
+				<span ng-class="{'completed' : todo.completed, 'high_priority' : todo.highpriority}">{{todo.title}}</span>
+				<input type="checkbox" ng-model='todo.completed' />
+				<input type="checkbox" ng-model='todo.highpriority'>
+			</li>
+		</ul>
+
+		<form name="formAddTodo" ng-submit="addTodo()">
+			<input type="text" name='newTodo' ng-model="newTodo" required />
+			<button ng-disabled="formAddTodo.$invalid">Add New Item</button>
+		</form>
+		<button ng-click="clearCompleted()">Clear</button>
 
 	</div>
 
