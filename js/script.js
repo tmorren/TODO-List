@@ -13,7 +13,7 @@ app.controller('TodoController', ['$scope', function($scope){
     	$scope.todos = JSON.parse(localStorage['todos']);
     }
 
-	//Adds a new task to the list when the button is clicked
+	//Adds a new task to the list on button click
 	$scope.addTodo = function(){
 		
 		$scope.todos.push({
@@ -32,7 +32,7 @@ app.controller('TodoController', ['$scope', function($scope){
 		})
 	}
 
-	//Watches for changes in todos, if a change is made, save to local storage
+	//Watches for changes in todos. If a change is made, save to local storage
 	$scope.$watch('todos', function(newValue, oldValue){
 		if (newValue != oldValue){
 			localStorage.setItem('todos', JSON.stringify(newValue));

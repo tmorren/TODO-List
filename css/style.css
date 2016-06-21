@@ -1,7 +1,50 @@
-.completed{
-	text-decoration: line-through;
+h1, h3{
+	font-family: 'Montserrat', sans-serif;
+}
+
+body{
+	background: #A9C8FF;
+}
+
+.container{
+	background: #eee;
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto; 
+	width: 800px;
+	max-width: 90%;
+	text-align: center;
+}
+
+ul{
+	list-style: none;
+	padding-left: 0;
+}
+
+li{
+	background: white;
+	border: 1px solid #eee;
+
+	display: block;
+	box-sizing: border-box;
+	padding: 1em;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+li input[type="checkbox"]{
+	float: right;
 }
 
 .high_priority{
-	background: red;
+	border-left: 2px solid red;
 }
+
+.completed{
+	text-decoration: line-through;
+	background: #fff;
+	border-left: 2px solid green;
+}
+
