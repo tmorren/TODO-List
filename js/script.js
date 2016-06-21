@@ -3,26 +3,25 @@ var app = angular.module('todoApp', []);
 app.controller('TodoController', ['$scope', function($scope){
 	
 	//Initializes the list if there is nothing in local storage
-	var storage = localStorage.getItem('todos');
-
-	if (storage == ''){
-		$scope.todos = [{
-			'title' : 'Create my first task',
+	if(localStorage['todos'] == undefined) {
+        $scope.todos = [{
+        	'title' : 'Test',
 			'completed' : false,
 			'highpriority' : false
-		}];
-	} else {
-		$scope.todos = JSON.parse(storage);
-	}
+        }]
+    } else {
+    	$scope.todos = JSON.parse(localStorage['todos']);
+    }
 
 	//Adds a new task to the list when the button is clicked
 	$scope.addTodo = function(){
+		
 		$scope.todos.push({
-			'title' : $scope.newTodo,
-			'completed' : false,
-			'highpriority' : false
+				'title' : $scope.newTodo,
+				'completed' : false,
+				'highpriority' : false
 		})
-
+		
 		$scope.newTodo = '';
 	}
 
