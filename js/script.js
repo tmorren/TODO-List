@@ -5,7 +5,7 @@ app.controller('TodoController', ['$scope', function($scope){
 	//Initializes the list if there is nothing in local storage
 	if(localStorage['todos'] == undefined) {
         $scope.todos = [{
-        	'title' : 'Test',
+        	'title' : 'Create my first task!',
 			'completed' : false,
 			'highpriority' : false
         }]
