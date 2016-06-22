@@ -11,22 +11,30 @@
 	<div data-ng-controller="TodoController" class="container">
 	
 		<h1>My TODO List</h1>
+		<p>This todo list allows you to save the list using local storage. You can also set a task to high priority or completed. The clear button will remove any complete items.</p>
 		<h3>I need to...</h3>
 		<ul>
 			<li ng-repeat="todo in todos track by $index | orderBy: ['todo.highpriority','todo.title']" 
-				ng-class="{'completed' : todo.completed, 'high_priority' : todo.highpriority}">
-				<span ng-bind="todo.title"></span>
-				<input type="checkbox" ng-model='todo.completed' />
-				<input type="checkbox" ng-model='todo.highpriority'>
+				ng-class="{'completedBox' : todo.completed, 'high_priority' : todo.highpriority}">
+				<div ng-bind="todo.title" class="titleContainer"
+					 ng-class="{'completedText' : todo.completed}"></div>
+				<div class="checkContainer">
+					<input type="checkbox" ng-model='todo.highpriority'>
+					<label>High Priority</label>
+					<input type="checkbox" ng-model='todo.completed' />	
+					<label>Complete</label>
+				</div>
 			</li>
 		</ul>
 
-		<form name="formAddTodo" ng-submit="addTodo()">
-			<input type="text" name='newTodo' ng-model="newTodo" required />
-			<button ng-disabled="formAddTodo.$invalid">Add New Item</button>
-		</form>
-		<button ng-click="clearCompleted()">Clear</button>
-
+		<div id="formContainer">
+			<form name="formAddTodo" ng-submit="addTodo()">
+				<input type="text" name='newTodo' ng-model="newTodo" 
+					   placeholder="Enter new task.." autocomplete="off" required />
+				<button ng-disabled="formAddTodo.$invalid" id="btnAdd">Add New Item</button>
+			</form>
+				<button ng-click="clearCompleted()" id="btnClear">Clear</button>
+		</div>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>

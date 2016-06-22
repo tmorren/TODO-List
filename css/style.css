@@ -1,50 +1,178 @@
-h1, h3{
-	font-family: 'Montserrat', sans-serif;
-}
-
 body{
-	background: #A9C8FF;
+	font-family: 'Montserrat', sans-serif;
+	background: #27408B	;
 }
 
-.container{
-	background: #eee;
-	border: 1px solid black;
-	margin-left: auto;
-	margin-right: auto; 
-	width: 800px;
-	max-width: 90%;
+h1,h2,h3{
 	text-align: center;
 }
 
-ul{
-	list-style: none;
-	padding-left: 0;
-}
-
-li{
-	background: white;
-	border: 1px solid #eee;
-
-	display: block;
-	box-sizing: border-box;
-	padding: 1em;
-	width: 90%;
+p{
+	width: 80%;
+	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	text-align: left;
 }
 
-li input[type="checkbox"]{
-	float: right;
-}
+/*Main container for the app*/
+	.container{
+		background: #eee;
+		margin-top: 3em;
+		margin-left: auto;
+		margin-right: auto; 
+		padding-top: 2em;
+		padding-bottom: 3em;
+		width: 800px;
+		max-width: 90%;
+	}
 
-.high_priority{
-	border-left: 2px solid red;
-}
+/*Remove default styling for unordered list*/
+	ul{
+		list-style: none;
+		padding-left: 0;
+	}
 
-.completed{
-	text-decoration: line-through;
-	background: #fff;
-	border-left: 2px solid green;
-}
+/*Style for the main task container*/
+	li{
+		background: white;
+		border: 1px solid #eee;
+		overflow: hidden;
+
+		
+		box-sizing: border-box;
+		padding: 1em;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: .25em;
+
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+
+		-webkit-flex-direction: row;
+	   flex-direction: row;
+
+		align-items: center;
+	}
+
+/*For the name of the task*/
+	.titleContainer{
+		text-align: left;
+	}
+
+/*For the container with the checkboxes*/
+	.checkContainer{
+		margin-left: auto;
+		/*border: 1px solid blue;*/
+		text-align: left;
+		min-width: 168px;
+	}
+
+/*Changes style when the task has the high priority box checked*/
+	.high_priority{
+		border-left: 5px solid red;
+	}
+
+/*Changes style when the task has the completed box checked*/
+	.completedBox{
+		background: #fff;
+		border-left: 5px solid green;
+	}
+
+/*Changes style when the task has the completed box checked*/
+	.completedText{
+		text-decoration: line-through;
+	}
+
+	label{
+		font-size: 10px;
+	}
+
+/*Styling for the input box and buttons*/
+	#formContainer{
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	form{
+		display: inline-block;
+	}
+
+	input[type="text"]{
+		width: 50%;
+		height: 36px;
+		font-size: 16px;
+		padding-left: .5em;
+		padding-right: .5em;
+		border: 0;
+	}
+
+	#btnAdd, #btnClear{
+		height: 38px;
+		border: 0;
+		color: white;
+		box-sizing: border-box;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	#btnAdd{
+		background: #3498db;
+	}
+
+	#btnClear{
+		background: #e74c3c;
+		margin-left: -30px;
+	}
+
+	#btnAdd:hover{
+		background: #258cd1;
+		cursor: pointer;
+	}
+
+	#btnClear:hover{
+		background: #e43725;
+		cursor: pointer;
+	}
+
+/*Changes for a smaller screen*/
+	@media (max-width: 528px){
+		li{
+			webkit-flex-direction: column;
+	    	flex-direction: column;
+
+	    	-ms-flex-align: left;
+			-webkit-align-items: left;
+			-webkit-box-align: left;
+		}
+
+		.titleContainer{
+			min-width: 100%;
+			text-align: center;
+		}
+
+		.checkContainer{
+			min-width: 100%;
+			text-align: center;
+			margin-top: .5em;
+		}
+
+		form{
+			width: 100%;
+		}
+
+		input[type="text"]{
+			box-sizing: border-box;
+			min-width: 100%;
+		}
+
+		#btnAdd, #btnClear{
+			min-width: 100%;
+			margin-left: 0;
+			margin-top: .5em;
+		}
+
+	}
 
