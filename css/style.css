@@ -80,7 +80,6 @@ p{
 		border-left: 5px solid green;
 	}
 
-/*Changes style when the task has the completed box checked*/
 	.completedText{
 		text-decoration: line-through;
 	}
@@ -107,6 +106,10 @@ p{
 		padding-left: .5em;
 		padding-right: .5em;
 		border: 0;
+	}
+
+	input[type="checkbox"]:hover, label:hover{
+		cursor: pointer;
 	}
 
 	#btnAdd, #btnClear{

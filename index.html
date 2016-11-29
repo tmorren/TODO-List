@@ -19,10 +19,8 @@
 				<div ng-bind="todo.title" class="titleContainer"
 					 ng-class="{'completedText' : todo.completed}"></div>
 				<div class="checkContainer">
-					<input type="checkbox" ng-model='todo.highpriority'>
-					<label>High Priority</label>
-					<input type="checkbox" ng-model='todo.completed' />	
-					<label>Complete</label>
+					<label><input type="checkbox" ng-model='todo.highpriority'>High Priority</label>
+					<label><input type="checkbox" ng-model='todo.completed' />Complete</label>
 				</div>
 			</li>
 		</ul>
